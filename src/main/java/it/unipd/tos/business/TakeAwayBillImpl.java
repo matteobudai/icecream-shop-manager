@@ -55,6 +55,11 @@ public class TakeAwayBillImpl implements TakeAwayBill {
         if(total>50 && notBevanda) {
             total -= total*0.1;
         }
+        
+        //commissione
+        if(total<10) {
+            total += 0.5;
+        }
 
         return total;
     }
