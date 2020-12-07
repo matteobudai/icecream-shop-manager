@@ -58,5 +58,16 @@ public class TakeAwayBillImplTest {
         }       
         assertEquals(16.5, testBill.getOrderPrice(itemsOrdered,user), 0.0);
     }
+    
+      @Test
+    public void totaleConScontoSeOltre50euroDiSpesaTest() {
+
+        itemsOrdered.add(new MenuItem( ItemType.Gelato, "Torta Gelato",25.00));
+        itemsOrdered.add(new MenuItem( ItemType.Gelato, "Confezione Gelato",25.00));
+        itemsOrdered.add(new MenuItem( ItemType.Budino, "Pinguino",3.00));
+        itemsOrdered.add(new MenuItem( ItemType.Bevanda, "Fanta",2.00));
+
+        assertEquals(49.5, testBill.getOrderPrice(itemsOrdered,user), 0.0);
+    }
 
 } 
